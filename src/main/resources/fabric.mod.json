@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "craftrefill",
+  "version": "${version}",
+  "name": "Craft Refill",
+  "description": "Refill the crafting table with your last used recipe by pressing shift+space!",
+  "authors": [
+    "DuncanRuns"
+  ],
+  "contributors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/craftrefill/icon.png",
+  "environment": "client",
+  "mixins": [
+    "craftrefill.mixins.json"
+  ]
+}
