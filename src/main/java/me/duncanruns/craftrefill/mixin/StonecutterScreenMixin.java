@@ -46,8 +46,13 @@ public abstract class StonecutterScreenMixin extends HandledScreen<StonecutterSc
     }
 
     private void fillRecipe() {
+        if (fillSlot())
+            selectRecipe();
+    }
+
+    private boolean fillSlot() {
         // If there is already the item in there, skip
-        if (CraftRefill.lastSCRecipe.inputItem().equals(getScreenHandler().input.getStack(0).getItem())) return;
+        if (CraftRefill.lastSCRecipe.inputItem().equals(getScreenHandler().input.getStack(0).getItem())) return true;
 
         // Throw out incorrect item in input
         if (getScreenHandler().input.getStack(0).getCount() > 0) this.onMouseClick(null, 0, 1, SlotActionType.THROW);
@@ -64,8 +69,12 @@ public abstract class StonecutterScreenMixin extends HandledScreen<StonecutterSc
         }
 
         // If none found, return
-        if (bestSlot == null) return;
+        if (bestSlot == null) return false;
         onMouseClick(bestSlot, 0, 0, SlotActionType.QUICK_MOVE);
+        return true;
+    }
+
+    private void selectRecipe() {
         client.interactionManager.clickButton(this.handler.syncId, CraftRefill.lastSCRecipe.buttonId());
     }
 
