@@ -4,4 +4,5 @@ import net.minecraft.recipe.Recipe;
 
 public class CraftRefill {
     public static Recipe<?> lastRecipe = null;
+    public static StonecuttingRecipeInfo lastSCRecipe = null;
 }

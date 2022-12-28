@@ -6,7 +6,8 @@
   "client": [
     "ClientPlayerInteractionManagerMixin",
     "CraftingScreenMixin",
-    "RecipeBookWidgetMixin"
+    "RecipeBookWidgetMixin",
+    "StonecutterScreenMixin"
   ],
   "server": [],
   "injectors": {
